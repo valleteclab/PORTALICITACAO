@@ -1,0 +1,25 @@
+[Unit]
+Description=Portal de Licitações
+Documentation=https://github.com/seu-repositorio/portal-licitacao
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=portal
+WorkingDirectory=/opt/portal-licitacao
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=portal-licitacao
+Environment=NODE_ENV=production
+# Arquivo com variáveis de ambiente
+EnvironmentFile=/opt/portal-licitacao/.env
+
+# Limites de recursos
+LimitNOFILE=4096
+MemoryLimit=1G
+
+[Install]
+WantedBy=multi-user.target

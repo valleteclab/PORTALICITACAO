@@ -1,0 +1,496 @@
+7:Integração
+16:                                                                                              Manual de Integração PNCP– Versão 2.2.1
+24:   3.2. Autenticação/Autorização ....................................................................................................... 13
+44:   5.15. Envio de arquivos pelas APIs de Documento ...................................................................... 22
+46:6. Catálogo de Serviços (APIs) ......................................................................................................... 23
+56:                                                                                         Manual de Integração PNCP– Versão 2.2.1
+96:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+136:                                                                                      Manual de Integração PNCP– Versão 2.2.1
+176:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+216:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+256:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+296:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+336:                                                                                       Manual de Integração PNCP– Versão 2.2.1
+376:                                                                                            Manual de Integração PNCP– Versão 2.2.1
+416:                                                                                      Manual de Integração PNCP– Versão 2.2.1
+456:                                                                                             Manual de Integração PNCP– Versão 2.2.1
+463:                                                            Manual de Integração PNCP– Versão 2.2.1
+468:as API REST do PNCP (Portal Nacional de Contratações Públicas).
+490:          ○   Portal: https://treina.pncp.gov.br
+491:          ○   Documentação Técnica (Serviços): https://treina.pncp.gov.br/api/pncp/swagger-
+493:          ○   Serviços (${BASE_URL}): https://treina.pncp.gov.br/api/pncp
+499:          ○   Portal: https://pncp.gov.br
+500:          ○   Documentação Técnica (Serviços): https://pncp.gov.br/api/pncp/swagger-
+502:          ○   Serviços (${BASE_URL}): https://pncp.gov.br/api/pncp
+511:3.2. Autenticação/Autorização
+513:O acesso ao Portal de consultas é público. Já as APIs de manutenção (serviços de inserção,
+519:                                                         Manual de Integração PNCP– Versão 2.2.1
+537:A plataforma usuária deverá se autenticar com login e senha para obter um JSON Web Token
+543:A API de login (POST https://pncp.gov.br/api/pncp/v1/usuarios/login) retorna o JWT no
+544:cabeçalho (header) da resposta HTTP, especificamente no campo “Authorization”, após o texto
+545:“Bearer”. As requisições a APIs de manutenção de dados no PNCP requerem esse campo de
+571:                                                           Manual de Integração PNCP– Versão 2.2.1
+587:Desta forma, foram definidos vários domínios que devem ser seguidos ao utilizar as APIs. Vale
+590:PNCP. Com este objetivo, além das APIs de inclusão, estão disponíveis os serviços de retificação
+623:                                                          Manual de Integração PNCP– Versão 2.2.1
+675:                                                         Manual de Integração PNCP– Versão 2.2.1
+727:                                                         Manual de Integração PNCP– Versão 2.2.1
+777:                                                      Manual de Integração PNCP– Versão 2.2.1
+828:                                                       Manual de Integração PNCP– Versão 2.2.1
+879:                                                       Manual de Integração PNCP– Versão 2.2.1
+930:                                                                Manual de Integração PNCP– Versão 2.2.1
+964:5.15. Envio de arquivos pelas APIs de Documento
+983:                                                                    Manual de Integração PNCP– Versão 2.2.1
+987:6. Catálogo de Serviços (APIs)
+999:         Endpoint              Método HTTP                          Exemplo de Payload
+1001: /v1/usuarios/{id}                 PUT          {
+1011: curl -k -X PUT --header "Authorization: Bearer access_token" "${BASE_URL}/v1/usuarios/5" -H
+1037:                                                                               Manual de Integração PNCP– Versão 2.2.1
+1043: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+1079:            Endpoint                 Método HTTP                               Exemplo de Payload
+1081: /v1/usuarios/{id}                          GET             Não se aplica
+1085: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/usuarios/5" -H
+1096:                                                                  Manual de Integração PNCP– Versão 2.2.1
+1159:                                                                  Manual de Integração PNCP– Versão 2.2.1
+1182:         Endpoint                Método HTTP                      Exemplo de Payload
+1184: /v1/usuarios                         GET         Não se aplica
+1188: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/usuarios" -H "accept:
+1205:                                                                    Manual de Integração PNCP– Versão 2.2.1
+1263:                                                                    Manual de Integração PNCP– Versão 2.2.1
+1284:         Endpoint                Método HTTP                        Exemplo de Payload
+1286: /v1/usuarios/login                   POST         {
+1293: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/usuarios/login" -H
+1310:                                                       Token de acesso; Antes do token terá a expressão
+1311:1          authorization            Texto (1024)       “Bearer” que identifica o tipo de token;
+1317:                                                                               Manual de Integração PNCP– Versão 2.2.1
+1322: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+1325: authorization: Bearer access_token
+1365:                                                                      Manual de Integração PNCP– Versão 2.2.1
+1368:              Endpoint                Método HTTP                           Exemplo de Payload
+1370: /v1/orgaos                                   POST             {
+1380: curl -k -X POST --header "Authorization: Bearer access_token"
+1413:                                                                               Manual de Integração PNCP– Versão 2.2.1
+1421: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+1428: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/1
+1459:            Endpoint                   Método HTTP                              Exemplo de Payload
+1461: /v1/orgaos/{cnpj}                            GET              Não se aplica
+1466: curl -k -X GET --header "Authorization: Bearer access_token"
+1476:                                                                      Manual de Integração PNCP– Versão 2.2.1
+1515:               Endpoint                     Método HTTP                    Exemplo de Payload
+1517: /v1/orgaos/{cnpj}/unidades                       POST         {
+1526: curl -k -X POST --header "Authorization: Bearer access_token"
+1533:                                                                               Manual de Integração PNCP– Versão 2.2.1
+1565: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+1572: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/unidades/1
+1584:                                                                 Manual de Integração PNCP– Versão 2.2.1
+1607:            Endpoint                      Método HTTP                 Exemplo de Payload
+1609: /v1/orgaos/{cnpj}/unidades/{codig               GET         Não se aplica
+1615: curl -k -X GET --header "Authorization: Bearer access_token"
+1634:                   Manual de Integração PNCP– Versão 2.2.1
+1642:                                                     Manual de Integração PNCP– Versão 2.2.1
+1697:                                                                Manual de Integração PNCP– Versão 2.2.1
+1736:              Endpoint                   Método HTTP                 Exemplo de Payload
+1738: /v1/orgaos/{cnpj}/unidades                     GET         Não se aplica
+1743: curl -k -X GET --header "Authorization: Bearer access_token"
+1753:                                               Manual de Integração PNCP– Versão 2.2.1
+1764:                   Manual de Integração PNCP– Versão 2.2.1
+1772:                                                     Manual de Integração PNCP– Versão 2.2.1
+1826:                                                                 Manual de Integração PNCP– Versão 2.2.1
+1883:                                                 Manual de Integração PNCP– Versão 2.2.1
+1901:                                                     Manual de Integração PNCP– Versão 2.2.1
+1910:Extensões de arquivo aceitos pelas APIs de Documento.
+1916:                         Manual de Integração PNCP– Versão 2.2.1
+1924:                                                        Manual de Integração PNCP– Versão 2.2.1
+1926:      Endpoint         Método HTTP                      Exemplo de Payload
+1928:   /v1/orgaos/{cnpj}      POST       {
+1980:                                                               Manual de Integração PNCP– Versão 2.2.1
+1983: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+1989: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+2007: headers.setBearerAuth(access_token);
+2032:                                                        Manual de Integração PNCP– Versão 2.2.1
+2083:                                                            Manual de Integração PNCP– Versão 2.2.1
+2137:                                                                              Manual de Integração PNCP– Versão 2.2.1
+2167:access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+2174:location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2022/1
+2184:"compraUri": https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2022/1,
+2185:"documentoUri": https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2022/1/arquivos/1
+2192:                                                         Manual de Integração PNCP– Versão 2.2.1
+2220:                                                           Manual de Integração PNCP– Versão 2.2.1
+2225:       Endpoint            Método HTTP                     Exemplo de Payload
+2227: /v1/orgaos/{cnpj}/compr       PUT        {
+2253: curl -k -X PUT --header "Authorization: Bearer access_token"
+2265:                                                        Manual de Integração PNCP– Versão 2.2.1
+2319:                                                              Manual de Integração PNCP– Versão 2.2.1
+2373:                                                           Manual de Integração PNCP– Versão 2.2.1
+2382:       Endpoint            Método HTTP                     Exemplo de Payload
+2384: /v1/orgaos/{cnpj}/compr      PATCH       {
+2410: curl -k -X PATCH --header "Authorization: Bearer access_token"
+2422:                                                        Manual de Integração PNCP– Versão 2.2.1
+2476:                                                              Manual de Integração PNCP– Versão 2.2.1
+2530:                                                                 Manual de Integração PNCP– Versão 2.2.1
+2535:         Endpoint               Método HTTP                      Exemplo de Payload
+2537: /v1/orgaos/{cnpj}/compra           DELETE       {
+2545: curl -k -X DELETE --header "Authorization: Bearer access_token"
+2584:                                                           Manual de Integração PNCP– Versão 2.2.1
+2593:         Endpoint           Método HTTP                    Exemplo de Payload
+2595: /v1/orgaos/{cnpj}/compra       GET        Não se aplica
+2601: curl     -k      -X     GET      --header    "Authorization:       Bearer         access_token"
+2623:                   Manual de Integração PNCP– Versão 2.2.1
+2633:                                                                Manual de Integração PNCP– Versão 2.2.1
+2690:                                                              Manual de Integração PNCP– Versão 2.2.1
+2746:                                                             Manual de Integração PNCP– Versão 2.2.1
+2785:Extensões de arquivo aceitos pelas APIs de Documento.
+2791:                                                                 Manual de Integração PNCP– Versão 2.2.1
+2794:         Endpoint             Método HTTP                        Exemplo de Payload
+2796: /v1/orgaos/{cnpj}/compras/       POST           Não se aplica
+2803: curl -k -X POST --header "Authorization: Bearer access_token"
+2841:                                                                               Manual de Integração PNCP– Versão 2.2.1
+2848: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+2855: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2021/1/arquivos/1
+2885:             Endpoint                  Método HTTP                              Exemplo de Payload
+2887: /v1/orgaos/{cnpj}/compras/                 DELETE             {
+2895: curl -k -X DELETE --header "Authorization: Bearer access_token"
+2903:                                                              Manual de Integração PNCP– Versão 2.2.1
+2950:                                                                  Manual de Integração PNCP– Versão 2.2.1
+2953:         Endpoint            Método HTTP                          Exemplo de Payload
+2955: /v1/orgaos/{cnpj}/compra        GET              Não se aplica
+2962: curl -k -X GET --header "Authorization: Bearer access_token"
+3003:                                                           Manual de Integração PNCP– Versão 2.2.1
+3025:        Endpoint              Método HTTP                      Exemplo de Payload
+3027: /v1/orgaos/{cnpj}/compras             GET     Não se aplica
+3034: curl -k -X GET --header "Authorization: Bearer access_token"
+3045:                                                                    Manual de Integração PNCP– Versão 2.2.1
+3099:                                                                         Manual de Integração PNCP– Versão 2.2.1
+3104:        Endpoint             Método HTTP                                 Exemplo de Payload
+3106:     /v1/orgaos/{cnpj}            POST         [
+3124: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3136:                                                          Manual de Integração PNCP– Versão 2.2.1
+3187:                                                                                Manual de Integração PNCP– Versão 2.2.1
+3201: [ "https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2021/1/itens/1"
+3233:                                                                    Manual de Integração PNCP– Versão 2.2.1
+3238:        Endpoint             Método HTTP                            Exemplo de Payload
+3240:     /v1/orgaos/{cnpj}            PUT          {
+3259: curl -k -X PUT --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3271:                                                          Manual de Integração PNCP– Versão 2.2.1
+3325:                                                                      Manual de Integração PNCP– Versão 2.2.1
+3359:        Endpoint               Método HTTP                            Exemplo de Payload
+3361: /v1/orgaos/{cnpj}/compra          PATCH         {
+3379: curl -k -X PATCH --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3387:                                                        Manual de Integração PNCP– Versão 2.2.1
+3398:                                                          Manual de Integração PNCP– Versão 2.2.1
+3452:                                                                 Manual de Integração PNCP– Versão 2.2.1
+3480:        Endpoint               Método HTTP                       Exemplo de Payload
+3482: /v1/orgaos/{cnpj}                  GET          Não se aplica
+3491: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3503:                                                    Manual de Integração PNCP– Versão 2.2.1
+3526:                                                               Manual de Integração PNCP– Versão 2.2.1
+3577:                                                               Manual de Integração PNCP– Versão 2.2.1
+3602:        Endpoint              Método HTTP                      Exemplo de Payload
+3604: /v1/orgaos/{cnpj}                 GET         Não se aplica
+3614: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3626:                                                Manual de Integração PNCP– Versão 2.2.1
+3646:                                                               Manual de Integração PNCP– Versão 2.2.1
+3694:                                                                  Manual de Integração PNCP– Versão 2.2.1
+3722:        Endpoint              Método HTTP                         Exemplo de Payload
+3724: /v1/orgaos/{cnpj}/compra          POST       {
+3743: curl -k -X POST --header "Authorization: Bearer access_token"
+3755:                                                              Manual de Integração PNCP– Versão 2.2.1
+3810:                                                                           Manual de Integração PNCP– Versão 2.2.1
+3839:access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+3846:location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2021/1/itens/1/resultados/1
+3872:                                                                   Manual de Integração PNCP– Versão 2.2.1
+3887:        Endpoint              Método HTTP                          Exemplo de Payload
+3889: /v1/orgaos/{cnpj}/compra         PUT         {
+3913: curl -k -X PUT --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+3926:                                                          Manual de Integração PNCP– Versão 2.2.1
+3981:                                                           Manual de Integração PNCP– Versão 2.2.1
+4037:                                                              Manual de Integração PNCP– Versão 2.2.1
+4043:          Endpoint            Método HTTP                     Exemplo de Payload
+4045: /v1/orgaos/{cnpj}/compra         GET         Não se aplica
+4055: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+4081:                   Manual de Integração PNCP– Versão 2.2.1
+4089:                                                                Manual de Integração PNCP– Versão 2.2.1
+4146:                                                                 Manual de Integração PNCP– Versão 2.2.1
+4193:                                                               Manual de Integração PNCP– Versão 2.2.1
+4198:          Endpoint             Método HTTP                     Exemplo de Payload
+4200: /v1/orgaos/{cnpj}/compra          GET         Não se aplica
+4207: curl -k -X GET --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+4239:                   Manual de Integração PNCP– Versão 2.2.1
+4247:                                                                Manual de Integração PNCP– Versão 2.2.1
+4304:                                                                 Manual de Integração PNCP– Versão 2.2.1
+4346:       Endpoint               Método HTTP                        Exemplo de Payload
+4348:/v1/orgaos/{cnpj}/compra           GET           Não se aplica
+4355:curl     -k      -X     GET      --header    "Authorization:        Bearer       access_token"
+4361:                                                          Manual de Integração PNCP– Versão 2.2.1
+4388:                   Manual de Integração PNCP– Versão 2.2.1
+4398:                                                               Manual de Integração PNCP– Versão 2.2.1
+4454:                                                                 Manual de Integração PNCP– Versão 2.2.1
+4476:                                                             Manual de Integração PNCP– Versão 2.2.1
+4485:        Endpoint            Método HTTP                      Exemplo de Payload
+4487: /v1/orgaos/{cnpj}/compra      POST         {
+4490:                                                "dataAssinatura": “2021-07-21",
+4498: curl -k -X POST --header "Authorization: Bearer access_token"
+4503:   "dataAssinatura": "2021-07-27",
+4516:                                                                              Manual de Integração PNCP– Versão 2.2.1
+4536:6           dataAssinatura              Data                 Sim                  ata
+4556:access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+4563:location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2021/1/atas/1
+4575:                                                    Manual de Integração PNCP– Versão 2.2.1
+4604:                                                              Manual de Integração PNCP– Versão 2.2.1
+4607:           Endpoint                Método                     Exemplo de Payload
+4610: /v1/orgaos/{cnpj}/compras/{anoC     PUT      Para retificação dos dados da ata informe todos
+4615:                                                "dataAssinatura": “2021-07-01",
+4626:                                                "dataAssinatura": “2021-07-01",
+4639:  'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/compras/2021/1/atas/1' \
+4641:  -H 'Authorization: Bearer <TOKEN_AUTORIZACAO>' \
+4654:                                                           Manual de Integração PNCP– Versão 2.2.1
+4679:7         dataAssinatura       Data             Sim           ata
+4708:                                                                              Manual de Integração PNCP– Versão 2.2.1
+4716: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+4735:  "dataAssinatura": "2021-07-27",
+4770:                                                              Manual de Integração PNCP– Versão 2.2.1
+4796:         Endpoint            Método HTTP                      Exemplo de Payload
+4798: /v1/orgaos/{cnpj}/compra        DELETE       {
+4807:  'http://localhost:8080/pncp-api/v1/orgaos/234234/compras/2021/1/atas/1' \
+4809:  -H 'Authorization: Bearer <TOKEN_AUTORIZACAO>'
+4820:                                                             Manual de Integração PNCP– Versão 2.2.1
+4868:                                                             Manual de Integração PNCP– Versão 2.2.1
+4871:            Endpoint                     Método HTTP               Exemplo de Payload
+4880:  'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/compras/2021/1/atas' \
+4902:                                                              Manual de Integração PNCP– Versão 2.2.1
+4914:1.3      dataAssinatura             Data            Data de assinatura da Ata
+4958:                                                            Manual de Integração PNCP– Versão 2.2.1
+4961:              Endpoint                 Método HTTP                 Exemplo de Payload
+4971:  'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/compras/2021/1/atas/1' \
+4998:                                                          Manual de Integração PNCP– Versão 2.2.1
+5008:3        dataAssinatura            Data         Data de assinatura da Ata
+5048:aceitos pelas APIs de Documento.
+5054:                                                             Manual de Integração PNCP– Versão 2.2.1
+5057:                Endpoint                 Método HTTP               Exemplo de Payload
+5067:  'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/compras/2021/1/atas/1/arquivos' \
+5071:  -H 'Authorization: Bearer <TOKEN_AUTORIZACAO>' \
+5108:                                                                           Manual de Integração PNCP– Versão 2.2.1
+5121: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+5128: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/compras/2021/1/atas/1/arquivos/1
+5165:                                                              Manual de Integração PNCP– Versão 2.2.1
+5168:                Endpoint                 Método HTTP                Exemplo de Payload
+5170: /v1/orgaos/{cnpj}/compras/{anoCom            DELETE      {
+5178: curl -k -X DELETE --header "Authorization: Bearer access_token"
+5216:                                                           Manual de Integração PNCP– Versão 2.2.1
+5244:             Endpoint                  Método HTTP              Exemplo de Payload
+5253: curl -k -X GET --header "Authorization: Bearer access_token"
+5266:                                                            Manual de Integração PNCP– Versão 2.2.1
+5308:                                                         Manual de Integração PNCP– Versão 2.2.1
+5334:               Endpoint                 Método HTTP            Exemplo de Payload
+5344: curl -k -X GET --header "Authorization: Bearer access_token"
+5357:                                                                     Manual de Integração PNCP– Versão 2.2.1
+5413:                                                              Manual de Integração PNCP– Versão 2.2.1
+5418:           Endpoint            Método HTTP                    Exemplo de Payload
+5420: /v1/orgaos/{cnpj}/compras/        GET        Não se aplica
+5427: curl     -k      -X     GET      --header    "Authorization:       Bearer       access_token"
+5454:                                                               Manual de Integração PNCP– Versão 2.2.1
+5511:                                                 Manual de Integração PNCP– Versão 2.2.1
+5529:                                                        Manual de Integração PNCP– Versão 2.2.1
+5542:                                                              Manual de Integração PNCP– Versão 2.2.1
+5547:        Endpoint             Método HTTP                      Exemplo de Payload
+5549: /v1/orgaos/{cnpj}/contrat        POST         {
+5568:                                               da API PNCP.",
+5575:                                                 "dataAssinatura": "2021-07-27",
+5579:                                                 “urlCipi”: ” https://cipi.economia.gov.br/111.11-011”
+5585: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+5597:                                                        Manual de Integração PNCP– Versão 2.2.1
+5653:                                                    Manual de Integração PNCP– Versão 2.2.1
+5685:25    dataAssinatura         Data             Sim     Data de assinatura do contrato
+5705:                                                                               Manual de Integração PNCP– Versão 2.2.1
+5720: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+5727: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1
+5764:                                                             Manual de Integração PNCP– Versão 2.2.1
+5766:        Endpoint             Método HTTP                     Exemplo de Payload
+5768: /v1/orgaos/{cnpj}/contrat       PUT         {
+5788:                                             da API de retificação no PNCP.",
+5795:                                               "dataAssinatura": "2021-07-21",
+5801:                                               “urlCipi”: ” https://cipi.economia.gov.br/111.11-011”
+5807: curl -k -X PUT --header "Authorization: Bearer access_token"
+5819:                                                           Manual de Integração PNCP– Versão 2.2.1
+5875:                                                  Manual de Integração PNCP– Versão 2.2.1
+5914:28    dataAssinatura         Data           Sim    Data de assinatura do contrato
+5929:                                                                               Manual de Integração PNCP– Versão 2.2.1
+5951: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+5958: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1
+5991:                                                                  Manual de Integração PNCP– Versão 2.2.1
+5996:            Endpoint                      Método HTTP                  Exemplo de Payload
+5998: /v1/orgaos/{cnpj}/contratos/{an             DELETE         {
+6006: curl -k -X DELETE --header "Authorization: Bearer access_token"
+6047:                                                                   Manual de Integração PNCP– Versão 2.2.1
+6050:aceitos pelas APIs de Documento.
+6053:             Endpoint                     Método HTTP                    Exemplo de Payload
+6055: /v1/orgaos/{cnpj}/contratos/{ano}/{             POST          Não se aplica
+6061: curl -k -X POST --header "Authorization: Bearer access_token"
+6096:                                                                               Manual de Integração PNCP– Versão 2.2.1
+6104: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+6111: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1/arquivos/1
+6141:                Endpoint                         Método HTTP                         Exemplo de Payload
+6143: /v1/orgaos/{cnpj}/contratos/{ano}/{s                  DELETE            {
+6151: curl    -k      -X     DELETE     --header      "Authorization:     Bearer       access_token"
+6158:                                                                   Manual de Integração PNCP– Versão 2.2.1
+6199:                  Endpoint                     Método HTTP               Exemplo de Payload
+6201: /v1/orgaos/{cnpj}/contratos/{ano}/{               GET          Não se aplica
+6207: curl -k -X GET --header "Authorization: Bearer access_token"
+6214:                                                                     Manual de Integração PNCP– Versão 2.2.1
+6275:                                                                          Manual de Integração PNCP– Versão 2.2.1
+6278:           Endpoint                   Método HTTP                         Exemplo de Payload
+6280: /v1/orgaos/{cnpj}/contrato                GET            Não se aplica
+6288: curl -k -X GET --header "Authorization: Bearer access_token"
+6329:                                                              Manual de Integração PNCP– Versão 2.2.1
+6337:          Endpoint               Método HTTP                    Exemplo de Payload
+6339: /v1/orgaos/{cnpj}/contratos/{         GET         Não se aplica
+6345: curl -k -X GET --header "Authorization: Bearer access_token"
+6365:                   Manual de Integração PNCP– Versão 2.2.1
+6373:                                                                   Manual de Integração PNCP– Versão 2.2.1
+6431:                                                               Manual de Integração PNCP– Versão 2.2.1
+6486:                                                            Manual de Integração PNCP– Versão 2.2.1
+6512:27   dataAssinatura       Data          Data de assinatura do contrato
+6537:                                                              Manual de Integração PNCP– Versão 2.2.1
+6562:        Endpoint              Método HTTP                     Exemplo de Payload
+6564: /v1/orgaos/{cnpj}/contrat         GET        Não se aplica
+6571: curl     -k      -X     GET      --header      "Authorization:       Bearer        access_token"
+6582:                                                   Manual de Integração PNCP– Versão 2.2.1
+6603:                   Manual de Integração PNCP– Versão 2.2.1
+6613:                                                               Manual de Integração PNCP– Versão 2.2.1
+6669:                                                                 Manual de Integração PNCP– Versão 2.2.1
+6691:                                                            Manual de Integração PNCP– Versão 2.2.1
+6701:            Endpoint                 Método HTTP               Exemplo de Payload
+6703: /v1/orgaos/{cnpj}/contratos/{ano}       POST      {
+6707:                                                   para exemplificar uso da API.",
+6708:                                                     "dataAssinatura": "2021-07-22",
+6737: curl -k -X POST --header "Authorization: Bearer access_token"
+6745:                                                         Manual de Integração PNCP– Versão 2.2.1
+6754:                                                            Manual de Integração PNCP– Versão 2.2.1
+6775:7        dataAssinatura            Date           Sim           contrato
+6808:                                                    Manual de Integração PNCP– Versão 2.2.1
+6858:                                                                               Manual de Integração PNCP– Versão 2.2.1
+6873: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+6880: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1/termos/1
+6916:                                                           Manual de Integração PNCP– Versão 2.2.1
+6919:           Endpoint                Método HTTP                Exemplo de Payload
+6921: /v1/orgaos/{cnpj}/contratos/{an       PUT        {
+6925:                                                  para exemplificar uso da API.",
+6926:                                                    "dataAssinatura": "2021-07-22",
+6957: curl -k -X PUT --header "Authorization: Bearer access_token"
+6969:                                                            Manual de Integração PNCP– Versão 2.2.1
+7009:13       dataAssinatura            Date           Sim           contrato
+7026:                                                   Manual de Integração PNCP– Versão 2.2.1
+7079:                                                                               Manual de Integração PNCP– Versão 2.2.1
+7093: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+7100: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1/termos/1
+7133:                                                                   Manual de Integração PNCP– Versão 2.2.1
+7136:                Endpoint                       Método HTTP               Exemplo de Payload
+7138: /v1/orgaos/{cnpj}/contratos/{ano}                 DELETE      {
+7146: curl -k -X DELETE --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+7189:                                                                 Manual de Integração PNCP– Versão 2.2.1
+7193:                    Endpoint                       Método HTTP             Exemplo de Payload
+7195: /v1/orgaos/{cnpj}/contratos/{ano}                     GET           Não se aplica
+7202: curl -k -X GET --header "Authorization: Bearer access_token"                   "${BASE_URL}/v1/orgaos
+7243:                                                            Manual de Integração PNCP– Versão 2.2.1
+7274:     "dataAssinatura": "yyyy-mm-dd",
+7294:              Endpoint                  Método HTTP               Exemplo de Payload
+7296: /v1/orgaos/{cnpj}/contratos/{ano}/{s       GET         Não se aplica
+7302: curl -k -X GET --header "Authorization: Bearer access_token"           "${BASE_URL}/v1/orgaos
+7309:                                                             Manual de Integração PNCP– Versão 2.2.1
+7340:                                                           Manual de Integração PNCP– Versão 2.2.1
+7373:         "dataAssinatura": "yyyy-mm-dd",
+7393:arquivos aceitos pelas APIs de Documento.
+7399:                                                             Manual de Integração PNCP– Versão 2.2.1
+7402:                 Endpoint                      Método HTTP            Exemplo de Payload
+7404:/v1/orgaos/{cnpj}/contratos/{ano}/{sequen         POST         Não se aplica
+7410:curl -k -X POST --header "Authorization: Bearer access_token"
+7450:                                                                            Manual de Integração PNCP– Versão 2.2.1
+7458: access-control-allow-headers: Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin,
+7465: location: https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/contratos/2021/1/termos/1/arquivos/1
+7496:                Endpoint                        Método HTTP                       Exemplo de Payload
+7498: /v1/orgaos/{cnpj}/contratos/{ano}/{                 DELETE           {
+7507: curl    -k      -X     DELETE     --header      "Authorization:    Bearer       access_token"
+7513:                                                                 Manual de Integração PNCP– Versão 2.2.1
+7563:                                                                 Manual de Integração PNCP– Versão 2.2.1
+7566:                   Endpoint                       Método HTTP              Exemplo de Payload
+7568: /v1/orgaos/{cnpj}/contratos/{ano}/{sequen               GET          Não se aplica
+7574: curl -k -X GET --header "Authorization: Bearer access_token"
+7619:                                                                   Manual de Integração PNCP– Versão 2.2.1
+7646:                                          Endpoint                                      Méto       Exem
+7651: /v1/orgaos/{cnpj}/contratos/{ano}/{sequencial}/termos/{sequencialTermo}/arquiv          GET      Não se
+7657: curl -k -X GET --header "Authorization: Bearer access_token"
+7674:                                                                             Manual de Integração PNCP– Versão 2.2.1
+7719:           Endpoint                   Método HTTP                            Exemplo de Payload
+7721:    /v1/orgaos/{cnpj}/pca                  POST             {
+7730:                                                               Manual de Integração PNCP– Versão 2.2.1
+7778: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+7792:                                                          Manual de Integração PNCP– Versão 2.2.1
+7846:                                                                  Manual de Integração PNCP– Versão 2.2.1
+7901:                                                               Manual de Integração PNCP– Versão 2.2.1
+7908:                  Endpoint                      Método               Exemplo de Payload
+7911: /v1/orgaos/{cnpj}/pca/{ano}/{sequencial}       DELETE     {
+7919: curl -k -X DELETE --header "Authorization: Bearer access_token"
+7957:                                                                      Manual de Integração PNCP– Versão 2.2.1
+7971:                      Endpoint                           Método               Exemplo de Payload
+7974: /v1/orgaos/{cnpj}/pca/{ano}/consolidado                  GET       Não se aplica
+7979: curl -X 'GET' \ 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/consolidado'
+8014:                                                                Manual de Integração PNCP– Versão 2.2.1
+8051:                     Endpoint                          Método             Exemplo de Payload
+8054: /v1/orgaos/{cnpj}/pca/{ano}/consolidado/unidades         GET         Não se aplica
+8060: 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/consolidado/unidades' \ -
+8071:                                                              Manual de Integração PNCP– Versão 2.2.1
+8127:                                                              Manual de Integração PNCP– Versão 2.2.1
+8155:                     Endpoint                       Método            Exemplo de Payload
+8158: /v1/orgaos/{cnpj}/pca/{ano}/valorcategoriaitem         GET      Não se aplica
+8163: curl   -X    'GET'    \    'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/
+8184:                                                                Manual de Integração PNCP– Versão 2.2.1
+8234:                          Endpoint                          Método           Exemplo de Payload
+8240:                                                              Manual de Integração PNCP– Versão 2.2.1
+8242: /v1/orgaos/{cnpj}/pca/{ano}/{sequencial}/consolidado       GET          Não se aplica
+8248: 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/1/consolidado'          \     -H
+8296:                                                                   Manual de Integração PNCP– Versão 2.2.1
+8329:                               Endpoint                              Método      Exemplo de Payload
+8332: /v1/orgaos/{cnpj}/pca/{ano}/{sequencial}/valorcategoriaitem           GET       Não se aplica
+8337: curl -X 'GET' \ 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/1/
+8353:                                                                     Manual de Integração PNCP– Versão 2.2.1
+8409:                                                               Manual de Integração PNCP– Versão 2.2.1
+8415:          Endpoint               Método HTTP                    Exemplo de Payload
+8417:       /v1/orgaos/{cnpj}             POST         [
+8464: curl -k -X POST --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+8472:                                                               Manual de Integração PNCP– Versão 2.2.1
+8529:                                                                                    Manual de Integração PNCP– Versão 2.2.1
+8565:"https://treina.pncp.gov.br/api/pncp/v1/orgaos/10000000000003/pca/2021/1/itens/1"
+8587:                                                              Manual de Integração PNCP– Versão 2.2.1
+8597:                   Endpoint                        Método              Exemplo de Payload
+8600: /v1/orgaos/{cnpj}/pca/{ano}/{sequencial}/itens         GET      Não se aplica
+8605: curl -X 'GET' \ 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/1/itens' \ -H
+8643:                                                                Manual de Integração PNCP– Versão 2.2.1
+8699:                                                             Manual de Integração PNCP– Versão 2.2.1
+8755:                                                                 Manual de Integração PNCP– Versão 2.2.1
+8769:                 Endpoint                         Método               Exemplo de Payload
+8772:              /v1/orgaos/{cnpj}                   PATCH      {
+8798: curl -k -X PATCH --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+8815:                                                        Manual de Integração PNCP– Versão 2.2.1
+8870:                                                                    Manual de Integração PNCP– Versão 2.2.1
+8918:           Endpoint              Método HTTP                         Exemplo de Payload
+8920:       /v1/orgaos/{cnpj}                 PATCH         “lista”: [
+8926:                                                              Manual de Integração PNCP– Versão 2.2.1
+8974: curl -k -X PATCH --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+8988:                                                          Manual de Integração PNCP– Versão 2.2.1
+9044:                                                               Manual de Integração PNCP– Versão 2.2.1
+9098:                                                                     Manual de Integração PNCP– Versão 2.2.1
+9103:                       Endpoint                           Método                 Exemplo de Payload
+9106:              /v1/orgaos/{cnpj}                           DELETE     {
+9114: curl -k -X DELETE --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+9155:                                                                         Manual de Integração PNCP– Versão 2.2.1
+9164:               Endpoint            Método HTTP                             Exemplo de Payload
+9166:       /v1/orgaos/{cnpj}               DELETE            {
+9174: curl -k -X DELETE --header "Authorization: Bearer access_token" "${BASE_URL}/v1/orgaos
+9212:                                                                    Manual de Integração PNCP– Versão 2.2.1
+9226:                      Endpoint                        Método             Exemplo de Payload
+9229: /v1/orgaos/{cnpj}/pca/{ano}/csv                        GET      Não se aplica
+9234: curl -X 'GET' \ 'https://treina.pncp.gov.br/api/pncp/v1/orgaos/00394460000141/pca/2022/csv' \ -H
+9269:                                     Manual de Integração PNCP– Versão 2.2.1
+9277:                                                        Manual de Integração PNCP– Versão 2.2.1
+9282:(https://portaldeservicos.economia.gov.br) ou pelo telefone 0800 978 9001.
+9285:obtidas em https://www.gov.br/compras/pt-br/pncp.

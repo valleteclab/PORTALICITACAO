@@ -1,0 +1,11 @@
+/v1/atas
+/v1/atas/atualizacao
+/v1/contratacoes/atualizacao
+/v1/contratacoes/proposta
+/v1/contratacoes/publicacao
+/v1/contratos
+/v1/contratos/atualizacao
+/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}
+/v1/pca/
+/v1/pca/atualizacao
+/v1/pca/usuario
